@@ -1,0 +1,17 @@
+<svg width="180" height="252" viewBox="0 0 180 252" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="252" fill="white"/>
+  <text x="90" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="black" letter-spacing="2">CONDITIONAL CARD</text>
+  <line x1="15" y1="24" x2="165" y2="24" stroke="black" stroke-width="0.6"/>
+  <text x="90" y="52.0" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="black">Pipe Burst at</text>
+  <text x="90" y="77.0" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="black">Home</text>
+  <line x1="15" y1="100" x2="165" y2="100" stroke="black" stroke-width="0.6"/>
+  <text x="90" y="116.3" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="bold" fill="black">Home Stability &#8805; 2</text>
+  <text x="90" y="133.3" text-anchor="middle" font-family="Georgia, serif" font-size="13"  fill="black">Lose 1 from Home</text>
+  <text x="90" y="150.3" text-anchor="middle" font-family="Georgia, serif" font-size="13"  fill="black">Stability</text>
+  <line x1="30" y1="164" x2="150" y2="164" stroke="black" stroke-width="0.3" stroke-dasharray="3,3"/>
+  <text x="90" y="180.3" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="bold" fill="black">Otherwise</text>
+  <text x="90" y="197.3" text-anchor="middle" font-family="Georgia, serif" font-size="13"  fill="black">Lose 3 from Home</text>
+  <text x="90" y="214.3" text-anchor="middle" font-family="Georgia, serif" font-size="13"  fill="black">Stability</text>
+  <line x1="15" y1="228" x2="165" y2="228" stroke="black" stroke-width="0.6"/>
+  <text x="90" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="black" letter-spacing="2">THE BURNOUT BUDGET</text>
+</svg>

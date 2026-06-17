@@ -1,0 +1,18 @@
+<svg width="180" height="252" viewBox="0 0 180 252" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="252" fill="white"/>
+  <text x="90" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="black" letter-spacing="2">CONDITIONAL CARD</text>
+  <line x1="15" y1="24" x2="165" y2="24" stroke="black" stroke-width="0.6"/>
+  <text x="90" y="41.8" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="black">Coworker Makes</text>
+  <text x="90" y="63.8" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="black">Everything</text>
+  <text x="90" y="85.8" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="black">Harder</text>
+  <line x1="15" y1="100" x2="165" y2="100" stroke="black" stroke-width="0.6"/>
+  <text x="90" y="117.8" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="black">Social Connections &#8805; 2</text>
+  <text x="90" y="132.8" text-anchor="middle" font-family="Georgia, serif" font-size="11"  fill="black">Lose 1 from Social</text>
+  <text x="90" y="147.8" text-anchor="middle" font-family="Georgia, serif" font-size="11"  fill="black">Connections</text>
+  <line x1="30" y1="164" x2="150" y2="164" stroke="black" stroke-width="0.3" stroke-dasharray="3,3"/>
+  <text x="90" y="181.8" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="black">Otherwise</text>
+  <text x="90" y="196.8" text-anchor="middle" font-family="Georgia, serif" font-size="11"  fill="black">Lose 3 from Mental</text>
+  <text x="90" y="211.8" text-anchor="middle" font-family="Georgia, serif" font-size="11"  fill="black">Wellbeing</text>
+  <line x1="15" y1="228" x2="165" y2="228" stroke="black" stroke-width="0.6"/>
+  <text x="90" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="black" letter-spacing="2">THE BURNOUT BUDGET</text>
+</svg>
