@@ -16,23 +16,41 @@
 
     /* ── HEADER ─────────────────────────────────────────── */
     header {
-      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      min-height: 132px;
+      color: #050505;
+      background: linear-gradient(135deg, #fffefa 0%, #fff7e8 62%, #fff0d6 100%);
+      border-bottom: 5px solid #ff6a00;
+      box-shadow: 0 14px 36px rgba(0,0,0,.34);
+      padding: 14px 28px;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #d71920, #ff6a00, #ffbd2e, #ff6a00, #d71920);
+    }
+    .header-inner {
+      max-width: 1780px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: 220px 1fr auto;
       align-items: center;
       gap: 24px;
-      padding: 24px 48px;
-      border-bottom: 3px solid #E8380D;
+      position: relative;
+      z-index: 1;
     }
-
     #fireCanvas { display: none; }
 
     /* Logo inline SVG */
-    .logo-wrap {
-    }
-    .logo-wrap svg {
-      width: 280px;
-      height: auto;
+    .logo-wrap img {
+      width: 190px;
+      max-height: 105px;
+      object-fit: contain;
+      display: block;
     }
 
     /* Title block */
@@ -40,17 +58,19 @@
       text-align: center;
     }
     .title-block h1 {
-      font-size: clamp(2.8rem, 4.5vw, 5rem);
-      font-weight: 900;
-      color: #0a0a0a;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      text-shadow: 0 2px 0 rgba(255,255,255,0.6);
+      margin: 0;
+      font-size: clamp(2.2rem, 4.8vw, 5rem);
+      line-height: .92;
+      letter-spacing: -.07em;
+      font-weight: 950;
+      color: #050505;
+      white-space: nowrap;
     }
 
     /* Cards remaining pill */
     .status-pill {
-      background: #111;
+      background: linear-gradient(180deg, #36100b, #1c0b08);
+      border: 1px solid rgba(255,106,0,.78);
       border-radius: 10px;
       padding: 10px 18px;
       text-align: center;
@@ -58,18 +78,18 @@
     }
     .status-pill .label {
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: 2px;
-      color: #E8380D;
+      color: #ffbd2e;
       text-transform: uppercase;
     }
     .status-pill .count {
       font-size: 2.2rem;
-      font-weight: 900;
-      color: #fff;
+      font-weight: 950;
+      color: #ffd36b;
       line-height: 1.1;
     }
-    .status-pill .count span { color: #888; }
+    .status-pill .count span { color: rgba(255,211,107,0.5); }
 
     /* ── TOOLBAR ─────────────────────────────────────────── */
     .toolbar {
@@ -88,18 +108,18 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 8px 18px;
-      border-radius: 6px;
-      border: 1.5px solid #E8380D;
-      background: transparent;
-      color: #E8380D;
-      font-size: 13px;
-      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,106,0,.78);
+      background: linear-gradient(180deg, #36100b, #1c0b08);
+      color: #ffd36b;
+      font-size: 14px;
+      font-weight: 900;
       cursor: pointer;
-      transition: all .15s;
+      transition: transform .12s ease, filter .12s ease;
       letter-spacing: .3px;
     }
-    .btn:hover { background: #E8380D; color: #fff; }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.12); }
     .btn svg { width: 15px; height: 15px; fill: currentColor; }
 
     .toolbar-hint {
@@ -294,19 +314,18 @@
 
 <!-- ── HEADER ─────────────────────────────────────────────── -->
 <header>
-  <div class="logo-wrap">
-    <img src="assets/Header logo.png" alt="Burnout Budget" style="width:280px;height:auto;"/>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img src="assets/Header logo.png" alt="Burnout Budget"/>
+    </div>
+    <div class="title-block">
+      <h1>Life Event Draw</h1>
+    </div>
+    <div class="status-pill">
+      <div class="label">Cards Remaining</div>
+      <div class="count" id="cardsRemaining">50<span>/50</span></div>
+    </div>
   </div>
-
-  <div class="title-block">
-    <h1>Life Event Draw</h1>
-  </div>
-
-  <div class="status-pill">
-    <div class="label">Cards Remaining</div>
-    <div class="count" id="cardsRemaining">50<span>/50</span></div>
-  </div>
-
   <canvas id="fireCanvas"></canvas>
 </header>
 
