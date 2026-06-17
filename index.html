@@ -384,8 +384,25 @@ function render() {
     const row = document.createElement('div');
     row.className = 'round-row' + (state.roll !== null ? ' active' : '');
 
-    // Roll already happened — how many slots to show
-    const slots = state.roll !== null ? state.roll : MAX_PER_ROUND;
+    // Only show slots after roll
+    if (state.roll === null) {
+      row.innerHTML = `
+        <div class="round-label">
+          <div class="round-word">Round</div>
+          <div class="round-num">${roundNum}</div>
+        </div>
+        <div class="round-controls">
+          <div class="ctrl-label">D6 Roll</div>
+          <button class="roll-btn" onclick="rollDie(${ri})">Roll D6</button>
+          <div class="die-display" id="die${ri}">–</div>
+          <div class="drawn-count">Waiting</div>
+        </div>
+        <div class="card-grid" id="grid${ri}"></div>
+      `;
+      main.appendChild(row);
+      return;
+    }
+    const slots = state.roll;
 
     row.innerHTML = `
       <div class="round-label">
