@@ -268,20 +268,25 @@
       object-fit: contain;
     }
 
-    /* Hover enlarge for flipped cards */
-    .card-slot.flipped:hover {
-      z-index: 100;
-    }
-
-    /* Enlarged card overlay on hover */
-    .card-enlarge {
+    /* Card modal overlay */
+    #cardModal {
       display: none;
       position: fixed;
+      inset: 0;
       z-index: 9999;
+      background: rgba(0,0,0,0.75);
+      align-items: center;
+      justify-content: center;
       pointer-events: none;
     }
-    .card-slot.flipped:hover .card-enlarge {
-      display: block;
+    #cardModal.visible {
+      display: flex;
+    }
+    #cardModal img {
+      width: min(340px, 80vw);
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
     }
   </style>
 </head>
@@ -306,6 +311,7 @@
 </header>
 
 <!-- ── TOOLBAR ────────────────────────────────────────────── -->
+<div id="cardModal"><img id="cardModalImg" src="" alt=""/></div>
 <div class="toolbar">
   <div class="toolbar-left">
     <button class="btn" onclick="shuffleDeck()">
@@ -481,36 +487,18 @@ function flipCard(ri, si) {
   if (slot) slot.classList.toggle('flipped', rounds[ri].flipped[si]);
 }
 
-// Enlarged card tooltip
-let enlargedEl = null;
+// Centered modal on hover
 function showEnlarged(e, cardFile) {
   const slot = e.currentTarget;
   if (!slot.classList.contains('flipped')) return;
-  hideEnlarged();
-  const div = document.createElement('div');
-  div.style.cssText = `
-    position: fixed; z-index: 9999; pointer-events: none;
-    width: 200px; height: 280px;
-    border-radius: 10px; overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
-    background: white;
-  `;
-  div.innerHTML = `<img src="assets/${cardFile}.svg" style="width:100%;height:100%;object-fit:contain;" />`;
-  document.body.appendChild(div);
-  enlargedEl = div;
-  positionEnlarged(e);
-}
-function positionEnlarged(e) {
-  if (!enlargedEl) return;
-  const x = Math.min(e.clientX + 20, window.innerWidth - 220);
-  const y = Math.min(e.clientY - 140, window.innerHeight - 300);
-  enlargedEl.style.left = x + 'px';
-  enlargedEl.style.top = Math.max(10, y) + 'px';
+  const modal = document.getElementById('cardModal');
+  const img = document.getElementById('cardModalImg');
+  img.src = 'assets/' + cardFile + '.svg';
+  modal.classList.add('visible');
 }
 function hideEnlarged() {
-  if (enlargedEl) { enlargedEl.remove(); enlargedEl = null; }
+  document.getElementById('cardModal').classList.remove('visible');
 }
-document.addEventListener('mousemove', positionEnlarged);
 
 function shuffleDeck() {
   deck = shuffle([...deck]);
